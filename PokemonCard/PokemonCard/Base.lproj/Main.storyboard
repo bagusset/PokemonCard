@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pokemon Display CardVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PokemonCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PokemonDisplayCardVC" customModule="PokemonCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eAb-Kq-6Nb">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="eAb-Kq-6Nb" customClass="PokemonDisplayCardCell" customModule="PokemonCard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="137" height="192"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FWY-7Q-o7K">
@@ -86,8 +86,18 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="137" height="192"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="3Dm-h2-mEq" id="4Rx-y4-5vO"/>
+                                            <outlet property="imageView" destination="Bc9-UZ-OkZ" id="Jg7-NI-hMZ"/>
+                                            <outlet property="labelView" destination="O45-mD-LQE" id="kS1-Ga-4De"/>
+                                            <outlet property="nameLabel" destination="8jp-yx-KY1" id="E6X-QH-0RB"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="D5N-79-43J"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tAT-L0-GOt"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -102,6 +112,9 @@
                             <constraint firstItem="YMO-An-Ia3" firstAttribute="top" secondItem="SLU-7Q-vPw" secondAttribute="bottom" constant="30" id="yv8-ql-a7m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pokemonCardCollectionView" destination="YMO-An-Ia3" id="oUN-rZ-jr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
